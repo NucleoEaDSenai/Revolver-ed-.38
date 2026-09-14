@@ -38,13 +38,13 @@ const CALIBRATION_ENABLED = true;
 const HOTSPOTS = [
   { id: "cao",               label: "Cão",                   position: "-0.1993 0.5610 -0.0035", normal: "-0.5296 0.8391 -0.1239",
     desc: "Componente localizado na parte traseira do revólver e integrante do mecanismo responsável pelo acionamento do disparo." },
-  { id: "alca-mira",         label: "Alça de mira",          position: "-0.0938 0.5627 -0.0110", normal: "0.0064 0.0087 -0.9999",
+  { id: "alca-mira",         label: "Alça de mira",          position: "-0.0763 0.5909 -0.0000",  normal: "-0.0298 0.9996 0.0002",
     desc: "Elemento traseiro do sistema de mira, utilizado em conjunto com a massa de mira para estabelecer a referência visual de alinhamento." },
-  { id: "tambor",            label: "Tambor",                position: "0.0130 0.4404 -0.0718",  normal: "-0.9595 0.1569 -0.2341",
+  { id: "tambor",            label: "Tambor",                position: "0.0403 0.5002 -0.0848",  normal: "0.0044 0.2141 -0.9768",
     desc: "Peça cilíndrica giratória que possui as câmaras destinadas a alojar os cartuchos do revólver." },
   { id: "vareta-extrator",   label: "Vareta do extrator",    position: "0.3019 0.4749 -0.0086",  normal: "0.0031 -0.6980 -0.7161",
     desc: "Componente ligado ao sistema de extração, utilizado para retirar simultaneamente os estojos ou cartuchos das câmaras do tambor." },
-  { id: "cano",               label: "Cano",                  position: "0.4073 0.5402 -0.0373",  normal: "-0.0015 0.1453 -0.9894",
+  { id: "cano",               label: "Cano",                  position: "0.3983 0.5343 -0.0378",  normal: "0.0006 0.0343 -0.9994",
     desc: "Estrutura tubular por onde o projétil percorre seu trajeto após o disparo, direcionando sua saída da arma." },
   { id: "massa-mira",         label: "Massa de mira",         position: "0.5612 0.5761 -0.0209",  normal: "-0.0039 0.8416 -0.5402",
     desc: "Elemento frontal do sistema de mira, que funciona em conjunto com a alça de mira como referência visual." },
@@ -56,7 +56,7 @@ const HOTSPOTS = [
     desc: "Componente do mecanismo de disparo que, quando acionado, inicia a sequência mecânica responsável pelo funcionamento da arma." },
   { id: "guarda-mato",         label: "Guarda-mato",            position: "-0.0439 0.2212 -0.0206", normal: "0.4833 0.7359 -0.4743",
     desc: "Estrutura que envolve e protege o gatilho, ajudando a reduzir o contato acidental com esse componente." },
-  { id: "cabo",                 label: "Cabo",                    position: "-0.3482 0.1370 -0.0577", normal: "-0.0741 -0.0496 -0.9960",
+  { id: "cabo",                 label: "Cabo",                    position: "-0.3260 0.1483 -0.0600", normal: "-0.0528 -0.1160 -0.9918",
     desc: "Parte destinada à empunhadura do revólver, oferecendo superfície de apoio para que a arma seja segurada." },
 ];
 
