@@ -61,7 +61,7 @@ const HOTSPOTS = [
 ];
 
 const CAMERA_PRESETS = {
-  "cao":              { theta: 195,    phi: 70,     radius: 0.9,    fov: null },
+  "cao":              { theta: 246.58, phi: 47.46,  radius: 0.9,    fov: 30 },
   "alca-mira":        { theta: 246.15, phi: 58.46,  radius: 1.4143, fov: 26.26 },
   "tambor":           { theta: 183,    phi: 67.14,  radius: 1.4143, fov: 26.26 },
   "vareta-extrator":  { theta: 133.59, phi: 81.87,  radius: 1.2586, fov: 22.98 },
