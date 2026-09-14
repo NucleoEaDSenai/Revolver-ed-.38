@@ -61,17 +61,17 @@ const HOTSPOTS = [
 ];
 
 const CAMERA_PRESETS = {
-  "cao":             { theta: 195, phi: 70, radius: 0.9,  fov: null },
-  "alca-mira":       { theta: 195, phi: 68, radius: 0.85, fov: null },
-  "tambor":          { theta: 170, phi: 55, radius: 0.85, fov: null },
-  "vareta-extrator": { theta: 195, phi: 70, radius: 0.85, fov: null },
-  "cano":            { theta: 195, phi: 80, radius: 0.95, fov: null },
-  "massa-mira":      { theta: 195, phi: 68, radius: 0.8,  fov: null },
-  "boca-cano":       { theta: 195, phi: 80, radius: 0.75, fov: null },
-  "dedal-serrilhado":{ theta: 200, phi: 65, radius: 0.8,  fov: null },
-  "gatilho":         { theta: 195, phi: 90, radius: 0.8,  fov: null },
-  "guarda-mato":     { theta: 195, phi: 95, radius: 0.85, fov: null },
-  "cabo":            { theta: 195, phi: 100, radius: 0.95, fov: null },
+  "cao":              { theta: 195,    phi: 70,     radius: 0.9,    fov: null },
+  "alca-mira":        { theta: 246.15, phi: 58.46,  radius: 1.4143, fov: 26.26 },
+  "tambor":           { theta: 183,    phi: 67.14,  radius: 1.4143, fov: 26.26 },
+  "vareta-extrator":  { theta: 133.59, phi: 81.87,  radius: 1.2586, fov: 22.98 },
+  "cano":             { theta: 127.38, phi: 68.3,   radius: 1.4997, fov: 26.26 },
+  "massa-mira":       { theta: 110.05, phi: 56.73,  radius: 1.7336, fov: 22.98 },
+  "boca-cano":        { theta: 102.68, phi: 75.67,  radius: 1.6982, fov: 22.98 },
+  "dedal-serrilhado": { theta: 231.64, phi: 61.53,  radius: 1.0747, fov: 20.11 },
+  "gatilho":          { theta: 195,    phi: 90,     radius: 0.8,    fov: null },
+  "guarda-mato":      { theta: 201.93, phi: 115.37, radius: 0.85,   fov: 30 },
+  "cabo":             { theta: 230.54, phi: 100,    radius: 1.67,   fov: 30 },
 };
 
 /* ============================================================= */
