@@ -178,7 +178,10 @@ const CAMERA_PRESETS = {
     const dRadius = target.radius - startRadius;
     const dFov = target.fov - startFov;
 
-    const hadControls = viewer.hasAttribute("camera-controls");
+    // Desativa o controle manual apenas durante a transição, para evitar
+    // que o usuário "brigue" com a animação. É sempre reativado ao final
+    // — mesmo que outra animação tenha assumido o controle no meio do
+    // caminho — para nunca deixar o modelo travado sem resposta ao mouse.
     viewer.removeAttribute("camera-controls");
 
     const t0 = performance.now();
@@ -200,7 +203,7 @@ const CAMERA_PRESETS = {
 
       if (t < 1) {
         requestAnimationFrame(frame);
-      } else if (hadControls) {
+      } else {
         viewer.setAttribute("camera-controls", "");
       }
     }
@@ -361,6 +364,7 @@ const CAMERA_PRESETS = {
     const orbit = viewer.getCameraOrbit();
     if (!orbit) return;
     animToken++; // cancela qualquer animação automática em curso
+    viewer.setAttribute("camera-controls", ""); // garante que o manual nunca fique travado
     const nextRadius = orbit.radius * factor;
     viewer.cameraOrbit = orbit.theta + "rad " + orbit.phi + "rad " + nextRadius + "m";
   }
