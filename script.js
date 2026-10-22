@@ -36,42 +36,44 @@
 const CALIBRATION_ENABLED = true;
 
 const HOTSPOTS = [
-  { id: "cao",               label: "Cão",                   position: "-0.1993 0.5610 -0.0035", normal: "-0.5296 0.8391 -0.1239",
-    desc: "Componente localizado na parte traseira do revólver e integrante do mecanismo responsável pelo acionamento do disparo." },
-  { id: "alca-mira",         label: "Alça de mira",          position: "-0.0763 0.5909 -0.0000",  normal: "-0.0298 0.9996 0.0002",
-    desc: "Elemento traseiro do sistema de mira, utilizado em conjunto com a massa de mira para estabelecer a referência visual de alinhamento." },
-  { id: "tambor",            label: "Tambor",                position: "0.0403 0.5002 -0.0848",  normal: "0.0044 0.2141 -0.9768",
-    desc: "Peça cilíndrica giratória que possui as câmaras destinadas a alojar os cartuchos do revólver." },
-  { id: "vareta-extrator",   label: "Vareta do extrator",    position: "0.3019 0.4749 -0.0086",  normal: "0.0031 -0.6980 -0.7161",
-    desc: "Componente ligado ao sistema de extração, utilizado para retirar simultaneamente os estojos ou cartuchos das câmaras do tambor." },
-  { id: "cano",               label: "Cano",                  position: "0.3983 0.5343 -0.0378",  normal: "0.0006 0.0343 -0.9994",
-    desc: "Estrutura tubular por onde o projétil percorre seu trajeto após o disparo, direcionando sua saída da arma." },
-  { id: "massa-mira",         label: "Massa de mira",         position: "0.5612 0.5761 -0.0209",  normal: "-0.0039 0.8416 -0.5402",
-    desc: "Elemento frontal do sistema de mira, que funciona em conjunto com a alça de mira como referência visual." },
-  { id: "boca-cano",          label: "Boca do cano",          position: "0.5974 0.5231 -0.0351",  normal: "0.0022 -0.5127 -0.8585",
-    desc: "Extremidade frontal do cano, correspondendo ao ponto de saída do projétil após percorrer seu interior." },
-  { id: "dedal-serrilhado",   label: "Dedal Serrilhado",      position: "-0.1581 0.4125 -0.0401", normal: "-0.0998 -0.1144 -0.9884",
-    desc: "Peça de acionamento associada ao mecanismo de abertura e liberação do tambor, com superfície serrilhada para facilitar o contato." },
-  { id: "gatilho",             label: "Gatilho",                position: "-0.0000 0.3017 -0.0162", normal: "-0.0117 -0.0033 -0.9999",
-    desc: "Componente do mecanismo de disparo que, quando acionado, inicia a sequência mecânica responsável pelo funcionamento da arma." },
-  { id: "guarda-mato",         label: "Guarda-mato",            position: "-0.0439 0.2212 -0.0206", normal: "0.4833 0.7359 -0.4743",
-    desc: "Estrutura que envolve e protege o gatilho, ajudando a reduzir o contato acidental com esse componente." },
-  { id: "cabo",                 label: "Cabo",                    position: "-0.3260 0.1483 -0.0600", normal: "-0.0528 -0.1160 -0.9918",
-    desc: "Parte destinada à empunhadura do revólver, oferecendo superfície de apoio para que a arma seja segurada." },
+  { id: "alca-mira", label: "Alça de mira", position: "-0.0763 0.5909 -0.0000", normal: "-0.0298 0.9996 0.0002",
+    desc: "Dispositivo de pontaria situado na parte posterior superior da armação (sobre a ponte).<br><br><b>Fixa (Entalhe):</b> Consiste em um canal ou ranhura usinado na própria estrutura da armação.<br><br><b>Regulável:</b> Peça móvel que permite ajustes de altura e lateralidade para correção da precisão do tiro." },
+  { id: "tambor", label: "Tambor", position: "0.0403 0.5002 -0.0848", normal: "0.0044 0.2141 -0.9768",
+    desc: "Peça cilíndrica giratória que serve, simultaneamente, como carregador (depósito de munição) e câmara de disparo." },
+  { id: "camaras", label: "Câmaras", position: "0.1549 0.4654 -0.0530", normal: "0.6978 -0.5845 -0.4141",
+    desc: "São os orifícios do tambor onde os cartuchos são inseridos. O número de câmaras varia conforme o modelo (geralmente 5, 6, 7 ou 8)." },
+  { id: "vareta-extrator", label: "Vareta do extrator", position: "0.3019 0.4749 -0.0086", normal: "0.0031 -0.6980 -0.7161",
+    desc: "Auxilia no giro do tambor, serve também para retirar cápsulas deflagradas ou munições intactas. Haste central que, quando pressionada para trás, aciona a estrela do extrator para retirar os estojos deflagrados ou munições das câmaras. (Nota: Ela não gira o tambor)." },
+  { id: "cano", label: "Cano", position: "0.3983 0.5343 -0.0378", normal: "0.0006 0.0343 -0.9994",
+    desc: "Tubo de aço destinado a resistir à pressão dos gases e guiar o projétil. Internamente possui a “alma”." },
+  { id: "massa-mira", label: "Massa de mira", position: "0.5612 0.5761 -0.0209", normal: "-0.0039 0.8416 -0.5402",
+    desc: "Dispositivo de pontaria situado na parte superior da boca do cano (parte da frente). Deve ser visualmente alinhada com a alça de mira para o disparo." },
+  { id: "dedal-serrilhado", label: "Dedal Serrilhado", position: "-0.1581 0.4125 -0.0401", normal: "-0.0998 -0.1144 -0.9884",
+    desc: "Serve para destravar o tambor e abri-lo. Dispositivo localizado na lateral da armação que, quando acionado manualmente, destrava o tambor, permitindo seu basculamento (abertura lateral) para os procedimentos de municiamento e desmuniciamento." },
+  { id: "gatilho", label: "Gatilho", position: "-0.0000 0.3017 -0.0162", normal: "-0.0117 -0.0033 -0.9999",
+    desc: "Aciona o recuo do cão e a rotação do tambor, até que se dê o escape do cão. Peça que, ao ser pressionada pelo atirador, inicia o ciclo de disparo. Sua função é liberar o cão (em ação simples) ou armar e liberar o cão (em ação dupla), simultaneamente acionando o mecanismo que rotaciona o tambor para alinhar uma nova câmara." },
+  { id: "guarda-mato", label: "Guarda-mato", position: "-0.0439 0.2212 -0.0206", normal: "0.4833 0.7359 -0.4743",
+    desc: "Arco protetor que envolve a tecla do gatilho. Sua função principal é impedir o acionamento acidental da arma provocado por quedas, esbarrões, contato com roupas ou com o coldre." },
+  { id: "alma-do-cano", label: "Alma do Cano", position: "0.4973 0.5189 -0.0323", normal: "0.0003 -0.5825 -0.8128",
+    desc: "A alma é a parte oca do interior do cano de uma arma de fogo, que vai geralmente da câmara de explosão até a boca do cano, destinado a resistir pressão dos gases produzidos pela combustão do propelente e orientar o projétil. Pode ser lisa ou raiada, dependendo do tipo de munição para o qual a arma foi projetada" },
+  { id: "raias", label: "Raias", position: "0.5258 0.5220 -0.0120", normal: "0.0023 0.8021 0.5971",
+    desc: "São sulcos helicoidais (em espiral) no interior do cano. Sua função é imprimir movimento de rotação ao projétil, garantindo estabilidade na trajetória (efeito giroscópico, DESTRÓGIRO ou SINISTRÓGIRO) e maior precisão." },
 ];
 
+
+
 const CAMERA_PRESETS = {
-  "cao":              { theta: 246.58, phi: 47.46,  radius: 0.9,    fov: 30 },
-  "alca-mira":        { theta: 246.15, phi: 58.46,  radius: 1.4143, fov: 26.26 },
-  "tambor":           { theta: 183,    phi: 67.14,  radius: 1.4143, fov: 26.26 },
-  "vareta-extrator":  { theta: 133.59, phi: 81.87,  radius: 1.2586, fov: 22.98 },
-  "cano":             { theta: 127.38, phi: 68.3,   radius: 1.4997, fov: 26.26 },
-  "massa-mira":       { theta: 110.05, phi: 56.73,  radius: 1.7336, fov: 22.98 },
-  "boca-cano":        { theta: 102.68, phi: 75.67,  radius: 1.6982, fov: 22.98 },
-  "dedal-serrilhado": { theta: 231.64, phi: 61.53,  radius: 1.0747, fov: 20.11 },
-  "gatilho":          { theta: 195,    phi: 90,     radius: 0.8,    fov: null },
-  "guarda-mato":      { theta: 201.93, phi: 115.37, radius: 0.85,   fov: 30 },
-  "cabo":             { theta: 230.54, phi: 100,    radius: 1.67,   fov: 30 },
+  "alca-mira": { theta: 246.15, phi: 58.46, radius: 1.4143, fov: 26.26 },
+  "tambor": { theta: 183, phi: 67.14, radius: 1.4143, fov: 26.26 },
+  "camaras": { theta: 106.26, phi: 84.32, radius: 1.5986, fov: 17.6 },
+  "vareta-extrator": { theta: 133.59, phi: 81.87, radius: 1.2586, fov: 22.98 },
+  "cano": { theta: 127.38, phi: 68.3, radius: 1.4997, fov: 26.26 },
+  "massa-mira": { theta: 110.05, phi: 56.73, radius: 1.7336, fov: 22.98 },
+  "dedal-serrilhado": { theta: 231.64, phi: 61.53, radius: 1.0747, fov: 20.11 },
+  "gatilho": { theta: 195, phi: 90, radius: 0.8, fov: null },
+  "guarda-mato": { theta: 201.93, phi: 115.37, radius: 0.85, fov: 30 },
+  "alma-do-cano": { theta: 94, phi: 81.08, radius: 2.0213, fov: 20.11 },
+  "raias": { theta: 88.18, phi: 79.27, radius: 1.6, fov: 30 },
 };
 
 /* ============================================================= */
@@ -273,7 +275,7 @@ const CAMERA_PRESETS = {
     const idx = HOTSPOTS.indexOf(h) + 1;
     infoNumber.textContent = String(idx).padStart(2, "0");
     infoTitle.textContent = h.label.toUpperCase();
-    infoDesc.textContent = h.desc || "";
+    infoDesc.innerHTML = h.desc || "";
   }
 
   /* -----------------------------------------------------------
